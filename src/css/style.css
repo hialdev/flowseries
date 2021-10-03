@@ -796,6 +796,58 @@ End Component
   }
 }
 
+.journey-show > .content {
+  background-color: #323232;
+  margin-top: -10em;
+  margin-bottom: 2em;
+  padding: 1.5em;
+  width: 100%;
+  max-width: 60em;
+  -webkit-box-shadow: 10px 10px 0px #FF2E10;
+          box-shadow: 10px 10px 0px #FF2E10;
+}
+
+.journey-show > .content h1, .journey-show > .content h2, .journey-show > .content h3, .journey-show > .content h4, .journey-show > .content h5 {
+  color: unset;
+}
+
+.journey-show > .content ol > li, .journey-show > .content ul > li {
+  margin-left: 20px;
+}
+
+.journey-show > .content img {
+  width: 100%;
+  display: block;
+  max-width: 50em;
+  margin: 1.5em 0px;
+  border-radius: 5px;
+  border: 1px solid #FF2E10;
+}
+
+.journey-show .box-journey .journey-item {
+  background-color: #323232;
+  width: 100%;
+}
+
+.journey-show .box-journey .journey-item > img {
+  display: block;
+  width: 100%;
+  max-height: 15em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.journey-show .box-journey .journey-item .content {
+  padding: 1.5em;
+}
+
+.journey-show .box-journey .journey-item:hover {
+  -webkit-transform: scale(1.03, 1.03);
+          transform: scale(1.03, 1.03);
+  -webkit-box-shadow: 10px 10px 0px #FF2E10;
+          box-shadow: 10px 10px 0px #FF2E10;
+}
+
 .visi-misi {
   background-color: #212121;
 }

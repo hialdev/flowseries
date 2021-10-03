@@ -681,6 +681,53 @@ End Component
     }
 }
 
+//------------------------------------------- Journey Show Page
+.journey-show{
+    
+    >.content{
+        background-color: $softdark;
+        margin-top: -10em;
+        margin-bottom: 2em;
+        padding: 1.5em;
+        width: 100%;
+        max-width: 60em;
+        box-shadow: $box-shad;
+        
+        h1,h2,h3,h4,h5{
+            color: unset;
+        }
+        ol>li,ul>li{
+            margin-left: 20px;
+        }
+        img{
+            width: 100%;
+            display: block;
+            max-width: 50em;
+            margin: 1.5em 0px;
+            border-radius: 5px;
+            border: 1px solid $flowcolor;
+        }
+    }
+    .box-journey{
+        .journey-item{
+            background-color: $softdark;
+            width: 100%;
+            >img{
+                display: block;
+                width: 100%;
+                max-height: 15em;
+                object-fit: cover;
+            }
+            .content{
+                padding: 1.5em;
+            }
+            &:hover{
+                transform: scale(1.03,1.03);
+                box-shadow: $box-shad;
+            }
+        }
+    }
+}
 //------------------------------------------- About Page
 //Visi Misi
 .visi-misi{
@@ -695,8 +742,6 @@ End Component
         }
     }
 }
-
-//------------------------------------------- About Page
 
 //------------------------------------------- Community Page
 .header-community{
