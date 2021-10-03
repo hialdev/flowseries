@@ -1,7 +1,7 @@
 
 //---------------------------- Carousel
 //Community Brand
-$('.box-community').owlCarousel({
+$('.community .box-community').owlCarousel({
     loop:true,
     margin:10,
     nav:false,
@@ -22,7 +22,26 @@ $('.box-community').owlCarousel({
     }
 })
 
-
+$('.pengurus .box-pengurus').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    dots:true,
+    autoplay:true,
+    autoplayTimeout:1500,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{
+            items:2
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:4
+        }
+    }
+})
 //---------------------------- Component
 //Nav Menu
 var btnToggle = $('.btn-mobile');

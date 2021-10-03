@@ -23,8 +23,35 @@ Reset
   line-height: 21.13px;
 }
 
+main {
+  background-color: #212121;
+}
+
 input[type=checkbox] {
   cursor: pointer;
+}
+
+input, textarea {
+  padding: 20px;
+  display: block;
+  color: #FF2E10;
+  width: 100%;
+  border-bottom: 2px solid #FF2E10;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+a {
+  color: #FF2E10;
 }
 
 .a-reset {
@@ -47,7 +74,7 @@ input[type=checkbox] {
   max-height: 2em;
 }
 
-p, font, h1, h2, span, div, section, form, input, q, ul, li {
+font, h1, h2, span, section, form, q, ul, li, p, div {
   color: #fff;
 }
 
@@ -285,12 +312,16 @@ nav.navbar.active, nav.navbar.static {
   background-color: #212121;
 }
 
+.flowcolor {
+  color: #FF2E10;
+}
+
 .alert {
   padding: 0.8em 1.2em;
   font-weight: 600;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -329,12 +360,18 @@ nav.navbar.active, nav.navbar.static {
 
 .alert.notice {
   background-color: #fdf7a2;
-  color: #db8f00;
+  color: #db8f00 !important;
 }
 
 .btn {
   text-decoration: none;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
   padding: 0.8em 1.2em;
   font-weight: bold;
   margin: 0.7em 0px;
@@ -358,6 +395,10 @@ nav.navbar.active, nav.navbar.static {
 .btn.btn-sec:hover {
   background-color: #FF2E10;
   color: #fff;
+}
+
+.btn.right {
+  margin-left: auto;
 }
 
 .btn-more {
@@ -435,6 +476,22 @@ nav.navbar.active, nav.navbar.static {
   max-width: 55em;
   text-align: center;
   margin: auto;
+}
+
+.header.header-join {
+  text-align: center;
+}
+
+@media only screen and (max-width: 760px) {
+  .header {
+    padding-top: 7em;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .header {
+    padding-top: 7em;
+  }
 }
 
 footer {
@@ -750,5 +807,175 @@ End Component
 
 .visi-misi .content ul li, .visi-misi .content ol li {
   margin-bottom: 0.7em;
+}
+
+.header-community .box-community {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
+
+.header-community .box-community .community-item {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(50, 50, 50, 0)), to(#323232));
+  background: linear-gradient(90deg, rgba(50, 50, 50, 0) 0%, #323232 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1.5em;
+  gap: 2em;
+}
+
+.header-community .box-community .community-item > .img {
+  width: 8em;
+}
+
+.header-community .box-community .community-item > .img img {
+  width: 100%;
+  display: block;
+}
+
+@media only screen and (max-width: 1095px) {
+  .header-community .box-community {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .header-community .box-community .community-item {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .header-community .box-community .community-item:nth-child(even) {
+    background: -webkit-gradient(linear, left top, right top, from(#323232), to(rgba(50, 50, 50, 0)));
+    background: linear-gradient(90deg, #323232 0%, rgba(50, 50, 50, 0) 100%);
+  }
+  .header-community .box-community .community-item:nth-child(even) > .img {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .header-community .box-community .community-item:nth-child(even) .content {
+    text-align: right;
+  }
+}
+
+.pengurus {
+  background-color: #212121;
+}
+
+.pengurus .box-pengurus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.pengurus .box-pengurus .pengurus-item {
+  background-color: #323232;
+  padding: 1.5em;
+  border-radius: 15px;
+}
+
+.pengurus .box-pengurus .pengurus-item img {
+  display: block;
+  border-radius: 99px;
+  height: 10em;
+  width: 10em;
+  margin: 0px auto;
+  margin-bottom: 0.9em;
+}
+
+.contact {
+  background-color: #212121;
+}
+
+.contact .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+
+.contact .container form {
+  background-color: #323232;
+  padding: 2em;
+  margin-top: -10em;
+}
+
+.contact .container .box-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.2em;
+}
+
+.contact .container .box-contact .contact-item {
+  border: 1px solid #FF6650;
+  color: #fff;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1em 2em;
+  gap: 1.5em;
+  text-decoration: none;
+  border-radius: 15px;
+}
+
+.contact .container .box-contact .contact-item .iconify {
+  color: #FF6650;
+  font-size: 32px;
+}
+
+.contact .container .box-contact .contact-item:hover {
+  background-color: #323232;
+  -webkit-box-shadow: 10px 10px 0px #FF2E10;
+          box-shadow: 10px 10px 0px #FF2E10;
+  border-color: #323232;
+}
+
+@media only screen and (max-width: 1095px) {
+  .contact .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .contact .container .box-contact {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .contact .container .box-contact {
+    gap: 1em;
+  }
+}
+
+.join .content ul > li, .join .content ol > li {
+  margin-left: 20px;
+}
+
+.join .content p, .join .content div {
+  color: currentColor;
 }
 /*# sourceMappingURL=style.css.map */

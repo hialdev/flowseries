@@ -35,7 +35,7 @@ $btn-pad:0.7em 1.5em;
 //Box
 $bd-rad:15px;
 $bd-wid:2px;
-$box-shad:5px 20px 60px -10px rgba(0, 112, 255, 0.4);
+$box-shad:10px 10px 0px #FF2E10;
 $card-shad:5px 10px 20px -5px rgba(0, 175, 224, 0.1);
 $hcard-shad:5px 10px 20px -5px rgba(0, 175, 224, 0.18);
 
@@ -67,10 +67,34 @@ Reset
     line-height: 21.13px;
 }
 
+main{
+    background-color: $dark;
+}
+
 input[type=checkbox]{
     cursor: pointer;
 }
 
+input,textarea{
+    padding: 20px;
+    display: block;
+    color:$flowcolor;
+    width: 100%;
+    border-bottom: 2px solid $flowcolor;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+a{
+    color: $flowcolor;
+}
 .a-reset {
     text-decoration: none;
     display: inline-block;
@@ -93,7 +117,7 @@ input[type=checkbox]{
 }
 
 //Typography
-p,font,h1,h2,span,div,section,form,input,q,ul,li{
+font,h1,h2,span,section,form,q,ul,li,p,div{
     color: $light;
 }
 p{
@@ -281,11 +305,15 @@ nav.navbar{
     }
 }
 
+//Color
+.flowcolor{
+    color: $flowcolor;
+}
 //alert
 .alert{
     padding: 0.8em 1.2em;
     font-weight: 600;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: space-between;
     border: 2px solid transparent;
@@ -310,14 +338,16 @@ nav.navbar{
     }
     &.notice{
         background-color: #fdf7a2;
-        color: #db8f00;
+        color: #db8f00!important;
     }
 }
 
 //button
 .btn{
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 1em;
     padding: 0.8em 1.2em;
     font-weight: bold;
     margin: 0.7em 0px;
@@ -337,6 +367,11 @@ nav.navbar{
             background-color: $flowcolor;
             color: $light;
         }
+    }
+
+    //position
+    &.right{
+        margin-left: auto;
     }
 }
 .btn-more{
@@ -401,6 +436,17 @@ nav.navbar{
             text-align: center;
             margin: auto;
         }
+    }
+    //Join Page
+    &.header-join{
+        text-align: center;
+    }
+    //responsive
+    @media only screen and (max-width: $w-sm){
+        padding-top: 7em;
+    }
+    @media only screen and (max-width: $w-sm){
+        padding-top: 7em;
     }
 }
 
@@ -604,7 +650,7 @@ End Component
             }
             &:hover{
                 transform: scale(1.03,1.03);
-                box-shadow: 10px 10px 0px #FF2E10;
+                box-shadow: $box-shad;
             }
         }
     }
@@ -646,6 +692,149 @@ End Component
             li{
                 margin-bottom: 0.7em;
             }
+        }
+    }
+}
+
+//------------------------------------------- About Page
+
+//------------------------------------------- Community Page
+.header-community{
+    .box-community{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        .community-item{
+            background: linear-gradient(90deg, rgba(50, 50, 50, 0) 0%, #323232 100%);
+            display: flex;
+            align-items: center;
+            padding: 1.5em;
+            gap:2em;
+            >.img{
+                width: 8em;
+                img{
+                    width: 100%;
+                    display: block;
+                }
+            }
+            //.content{
+                
+            //}
+        }
+    }
+
+    //responsive
+    @media only screen and (max-width: $w-lg){
+        .box-community{
+            grid-template-columns: 1fr;
+            gap: 0;
+            .community-item{
+                justify-content: space-evenly;
+                &:nth-child(even){
+                    background: linear-gradient(90deg, #323232 0%, rgba(50, 50, 50, 0) 100%);
+                    >.img{
+                        order: 1;
+                    }
+                    .content{
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Pengurus
+.pengurus{
+    background-color: $dark;
+    .box-pengurus{
+        display: flex;
+        align-items: flex-start;
+        .pengurus-item{
+            background-color: $softdark;
+            padding: 1.5em;
+            border-radius: 15px;
+            img{
+                display: block;
+                border-radius: 99px;
+                height: 10em;
+                width: 10em;
+                margin: 0px auto;
+                margin-bottom: 0.9em;
+            }
+        }
+    }
+}
+
+//------------------------------------------- Contact Page
+.contact{
+    background-color: $dark;
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+        form{
+            background-color: $softdark;
+            padding: 2em;
+            margin-top: -10em;
+        }
+        
+        .box-contact{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.2em;
+            .contact-item{
+                border: 1px solid $softflow;
+                color: $light;
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-around;
+                padding: 1em 2em;
+                gap: 1.5em;
+                text-decoration: none;
+                border-radius: 15px;
+                .iconify{ color: $softflow;
+                    font-size: $h2;
+                }
+
+                &:hover{
+                    background-color: $softdark;
+                    box-shadow: $box-shad;
+                    border-color: $softdark;
+                }
+            }
+        }
+    }
+
+    //responsive
+    @media only screen and (max-width: $w-lg){
+        .container{
+            grid-template-columns: 1fr;
+            .box-contact{
+                align-items: center;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $w-sm){
+        .container{
+            .box-contact{
+                gap: 1em;
+            }
+        }
+    }
+}
+
+//------------------------------------------- Join Page
+.join{
+    .content{
+        ul>li,ol>li{
+            margin-left: 20px;
+        }
+        p,div{
+            color: currentColor;
         }
     }
 }
