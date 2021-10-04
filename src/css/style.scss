@@ -809,6 +809,14 @@ End Component
             }
         }
     }
+
+    //responsive
+    @media only screen and (max-width: $w-sm){
+        .box-pengurus .pengurus-item img{
+            height: 100px;
+            width: 100px;
+        }
+    }
 }
 
 //------------------------------------------- Contact Page
